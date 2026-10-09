@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es‑MX">
+<head>
+<meta charset="UTF‑8">
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+<title>Huellas con Hogar</title>
+<style>
+*{box‑sizing:border‑box;margin:0;padding:0;}
+body{font‑family:'Segoe UI',sans‑serif;background‑color:#f0f8f5;color:#2d3436;line‑height:1.6;padding:1.2rem;}
+header{text‑align:center;margin‑bottom:2.5rem;}
+header h1{font‑size:2.2rem;color:#2b7a78;margin‑bottom:0.6rem;}
+header p{font‑size:1.1rem;color:#557571;}
+.contenedor‑botones{display:flex;gap:1.2rem;justify‑content:center;flex‑wrap:wrap;margin‑bottom:2.2rem;}
+button{padding:1rem 1.8rem;border:none;border‑radius:12px;font‑size:1.05rem;font‑weight:500;cursor:pointer;transition:all 0.3s ease;box‑shadow:0 3px 8px rgba(0,0,0,0.12);}
+#btn‑adopta{background‑color:#3aafa9;color:#ffffff;}
+#btn‑adopta:hover{background‑color:#2b7a78;transform:translateY(-3px);}
+#btn‑apadrina{background‑color:#f7c59f;color:#2d3436;}
+#btn‑apadrina:hover{background‑color:#f0a878;transform:translateY(-3px);}
+.seccion{display:none;background‑color:#ffffff;padding:1.8rem;border‑radius:16px;box‑shadow:0 4px 14px rgba(43,122,120,0.15);max‑width:640px;margin:0 auto;}
+.seccion.activa{display:block;}
+.seccion h2{color:#2b7a78;margin‑bottom:1.4rem;text‑align:center;}
+.tarjeta‑mascota{background‑color:#f8fdfb;border‑radius:14px;padding:1.2rem;margin‑bottom:1.3rem;box‑shadow:0 2px 9px rgba(0,0,0,0.08);transition:transform 0.3s ease,box‑shadow 0.3s ease;}
+.tarjeta‑mascota:hover{transform:translateY(-4px);box‑shadow:0 6px 18px rgba(43,122,120,0.18);}
+.tarjeta‑mascota h3{color:#2b7a78;margin‑bottom:0.5rem;}
+.info‑apadrinamiento{background‑color:#fff7ef;border‑radius:14px;padding:1.2rem;margin‑bottom:1rem;}
+@media(max‑width:480px){
+header h1{font‑size:1.8rem;}
+button{width:100%;}
+.seccion{padding:1.3rem;}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🐾 Huellas con Hogar</h1>
+<p>Plataforma para adoptar y apadrinar perritos y gatitos</p>
+</header>
+
+<div class="contenedor‑botones">
+<button id="btn‑adopta">Adoptar una mascota</button>
+<button id="btn‑apadrina">Apadrinar una mascota</button>
+</div>
+
+<section id="sec‑adopta" class="seccion">
+<h2>Mascotas disponibles para adopción</h2>
+<div class="tarjeta‑mascota">
+<img src="imagenes/max.jpg" alt="Max, perrito para adopción" style="width:100%;border‑radius:10px;">
+<h3>Max — Perrito</h3>
+<p>Juguetón, le gusta pasear y convivir con personas. Está listo para una familia definitiva.</p>
+<button onclick="alert('Solicitud de adopción para Max enviada. Nos pondremos en contacto contigo.')" style="margin‑top:0.8rem;background‑color:#3aafa9;color:white;">Solicitar adopción</button>
+</div>
+<div class="tarjeta‑mascota">
+<img src="imagenes/luna.jpg" alt="Luna, gatita para adopción" style="width:100%;border‑radius:10px;">
+<h3>Luna — Gatita</h3>
+<p>Tranquila y cariñosa, disfruta espacios tranquilos y las caricias suaves.</p>
+<button onclick="alert('Solicitud de adopción para Luna enviada. Nos pondremos en contacto contigo.')" style="margin‑top:0.8rem;background‑color:#3aafa9;color:white;">Solicitar adopción</button>
+</div>
+<div class="tarjeta‑mascota">
+<img src="imagenes/nala.jpg" alt="Nala, gatita para adopción" style="width:100%;border‑radius:10px;">
+<h3>Nala — Gatita</h3>
+<p>Muy curiosa y sociable, le gusta jugar con pelotas y estar cerca de las personas.</p>
+<button onclick="alert('Solicitud de adopción para Nala enviada. Nos pondremos en contacto contigo.')" style="margin‑top:0.8rem;background‑color:#3aafa9;color:white;">Solicitar adopción</button>
+</div>
+</section>
+
+<section id="sec‑apadrina" class="seccion">
+<h2>Programa de apadrinamiento 🐾</h2>
+<div style="margin‑bottom:1.2rem;">
+<img src="imagenes/refugio.jpg" alt="Espacio del refugio para mascotas apadrinadas" style="width:100%;border‑radius:10px;">
+</div>
+<p>Si aún no puedes adoptar una mascota en tu hogar, puedes convertirte en su padrino o madrina: aportas una cuota mensual para alimentación, cuidados veterinarios y mantenimiento del refugio, y podrás visitarla en horarios establecidos.</p>
+<div class="info‑apadrinamiento">
+<h3>¿Cómo funciona la cuota mensual?</h3>
+<p>Tu contribución ayuda a cubrir gastos básicos mientras la mascota espera una familia definitiva. Cada padrino recibe actualizaciones sobre su estado y fotografías periódicas.</p>
+</div>
+<button onclick="alert('Solicitud de apadrinamiento registrada. Te enviaremos los detalles de la cuota.')" style="margin‑top:1rem;background‑color:#f7c59f;color:#2d3436;">Quiero apadrinar</button>
+</section>
+
+<script>
+const btnAdopta=document.getElementById('btn‑adopta');
+const btnApadrina=document.getElementById('btn‑apadrina');
+const secAdopta=document.getElementById('sec‑adopta');
+const secApadrina=document.getElementById('sec‑apadrina');
+
+function ocultarTodo(){
+secAdopta.classList.remove('activa');
+secApadrina.classList.remove('activa');
+}
+btnAdopta.addEventListener('click',()=>{ocultarTodo();secAdopta.classList.add('activa');});
+btnApadrina.addEventListener('click',()=>{ocultarTodo();secApadrina.classList.add('activa');});
+</script>
+</body>
+</html>
